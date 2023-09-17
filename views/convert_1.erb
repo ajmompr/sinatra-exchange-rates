@@ -1,5 +1,12 @@
-<h1> Convert </h1>
+<h1> Convert <%= @curr_1 %></h1>
 
 <p>Go 
   <a href="/">back</a>.
+  <ul>
+    <% @symbol_hash.each do |key, value|%>
+      <li>
+       <%= "Convert 1 #{@curr_1} to #{key}..." %>
+      </li>
+    <% end %>
+  </ul>
 </p>

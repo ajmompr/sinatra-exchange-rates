@@ -38,5 +38,3 @@ get("/:currency_1") do
   erb(:convert_1)
 end
 
-get() do
-end
