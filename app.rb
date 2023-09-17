@@ -36,6 +36,7 @@ get("/:currency_1") do
 
   # Parse currency_1 value
   @curr_1 = params.fetch("currency_1").upcase
+  
   erb(:convert_1)
 end
 
@@ -56,5 +57,5 @@ get("/:currency_1/:currency_2") do
    @curr_1 = params.fetch("currency_1").upcase
    @curr_2 = params.fetch("currency_2").upcase
   erb(:convert_2)
-  
+
 end 
