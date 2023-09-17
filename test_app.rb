@@ -10,7 +10,7 @@ require "json"
  # Place GET request to the exchange symbol API url
  raw_exch_symbols = HTTP.get(exch_symbols_url)
 
- # Parse the HTTP Response with JSON 
+ # Parse the HTTP Response to JSON 
  parsed_response_symbols = JSON.parse(raw_exch_symbols)
 
  # Create symbol hash to obtain currency names
@@ -30,6 +30,9 @@ require "json"
 
   # Place GET request to exchange rate API
   raw_exch_rate = HTTP.get(exch_rate_url)
+
+  # Parse HTTP Response
+  parsed_exch_rate = JSON.parse(raw_exch_rate)
 
 
 
