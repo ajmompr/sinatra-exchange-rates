@@ -44,10 +44,16 @@ get("/:currency_1/:currency_2") do
   # Parse currency_1 value
   @curr_1 = params.fetch("currency_1").upcase
   @curr_2 = params.fetch("currency_2").upcase
-  
+
   # Assemble exchange rate URL
   exch_rate_url = "https://api.exchangerate.host/convert?from=" + @curr_1 + "&to=" + @curr_2
   pp exch_rate_url
+
+  # Place GET request to exchange rate API
+  raw_exch_rate = HTTP.get(exch_rate_url)
+
+  # Parse HTTP Response
+  parsed_exch_rate = JSON.parse(raw_exch_rate)
 
  
    
