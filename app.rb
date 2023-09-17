@@ -23,3 +23,7 @@ get("/") do
 
   erb(:home)
 end
+
+get("/:currency_1") do
+  erb(:convert_1)
+end
