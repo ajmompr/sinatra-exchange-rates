@@ -1,5 +1,5 @@
-require "sinatra"
-require "sinatra/reloader"
+# require "sinatra"
+# require "sinatra/reloader"
 require "http"
 require "json"
  
@@ -9,7 +9,13 @@ require "json"
 
  # Place GET request to the exchange rate API url
  raw_exch_symbols = HTTP.get(exch_symbols_url)
- #pp raw_exch_symbols
 
+ # Parse the HTTP Response with JSON 
  parsed_response_symbols = JSON.parse(raw_exch_symbols)
- pp parsed_response_symbols
+
+ # Create symbol hash to obtain currency names
+ symbol_hash = parsed_response_symbols.fetch("symbols")
+
+ symbol_hash.each do |key, value|
+  pp key
+ end
