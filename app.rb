@@ -55,6 +55,9 @@ get("/:currency_1/:currency_2") do
   # Parse HTTP Response
   parsed_exch_rate = JSON.parse(raw_exch_rate)
 
+  # Create info hash to obtain exchange rate
+  @info_hash = parsed_exch_rate.fetch("info")
+
  
    
   erb(:convert_2)
