@@ -34,7 +34,11 @@ get("/:currency_1") do
   # Create symbol hash to obtain currency names
   @symbol_hash = parsed_response_symbols.fetch("symbols")
 
+  # Parse currency_1 value
   @curr_1 = params.fetch("currency_1").upcase
   erb(:convert_1)
 end
 
+get("/:currency_1/:currency_2") do
+  erb(:convert_2)
+end 
