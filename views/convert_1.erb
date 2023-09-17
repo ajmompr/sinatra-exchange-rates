@@ -5,7 +5,9 @@
   <ul>
     <% @symbol_hash.each do |key, value|%>
       <li>
-       <%= "Convert 1 #{@curr_1} to #{key}..." %>
+       <a href="/<%= @curr_1 %>/<%= key %>"> 
+        <%= "Convert 1 #{@curr_1} to #{key}..." %> 
+      </a>
       </li>
     <% end %>
   </ul>
