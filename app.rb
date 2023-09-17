@@ -17,6 +17,9 @@ get("/") do
    # Parse the HTTP Response with JSON 
    parsed_response_symbols = JSON.parse(raw_exch_symbols)
 
+   # Create symbol hash to obtain currency names
+   @symbol_hash = parsed_response_symbols.fetch("symbols")
+   
 
   erb(:home)
 end
